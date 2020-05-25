@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+{% include 'head.html' with meta_discription=meta_discription %}
+
+<body>
+    {% include 'header.html' %}
+    {% include 'background.html' %}
+
+    {% block content %}
+    {% endblock content %}
+
+
+    {% include 'footer.html' with latest_post=latest_post %}
+    {% include 'scripts.html' %}
+</body>
+
+</html>

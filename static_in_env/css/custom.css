@@ -1,0 +1,107 @@
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans", Meiryo, sans-serif;
+}
+
+.navbar {
+  background-color: transparent;
+  border-bottom: 0px;
+}
+
+.navbar .navbar-nav a.nav-link {
+  color: white;
+  margin: 0 10px;
+  font-weight: 600;
+  font-size: 0.95em;
+}
+
+.navbar .navbar-nav a.nav-link:hover {
+  color: darkblue;
+}
+
+.navbar .navbar-nav a.nav-link.active {
+  color: darkblue;
+}
+
+.navbar-brand {
+  color: white;
+  font-size: 30px;
+}
+
+.navbar-brand:hover {
+  color: darkblue;
+}
+
+li.nav-item {
+  font-size: 20px;
+}
+
+.navbar .search-btn {
+  color: white;
+  border-left: 1px solid white;
+}
+
+.navbar .search-btn:hover {
+  color: darkblue;
+}
+
+section.content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  position: relative;
+}
+
+.container.entry-content {
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-row .post {
+  box-shadow: rgba(0, 0, 0, 0.1) 5px 5px 20px 5px;
+  padding: 0px;
+  margin: 0px 30px 60px 30px;
+}
+
+.content-row .post:hover {
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 5px 0px;
+  transition: box-shadow 0.4s;
+}
+
+.content-row .post-details {
+  padding: 10px 30px 20px 30px;
+}
+
+.blog-post {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.post-content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.markdown-body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+@media (max-width: 767px) {
+  .markdown-body {
+    padding: 15px;
+  }
+}
+
+footer.main-footer {
+  background: #292e33;
+}

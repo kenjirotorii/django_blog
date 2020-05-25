@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="content">
+
+  <div class="container entry-content">
+    <div class="row">
+      <main class=" post blog-post col-lg-9">
+        <div class="container">
+          <div class="post-single">
+            <div class="post-thumbnail"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></div>
+            <div class="post-details">
+              <div class="post-meta d-flex justify-content-between">
+                <div class="category">
+                  {% for cat in post.categories.all %}
+                  <a href="{% url 'blog:category_search' cat %}" style="font-size: 16px;">{{ cat }}</a>
+                  {% endfor %}
+                </div>
+              </div>
+              <h1>{{ post.title }}</h1>
+              <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
+                <div class="d-flex align-items-center flex-wrap" style="font-size: 14px;">
+                  <div class="date">作成日：{{ post.created_at.date }} </div>
+                  <div class="date">最終更新日：{{ post.updated_at.date }} </div>
+                </div>
+              </div>
+              <div class="post-tags">
+                {% for tag in post.tags.all %}
+                <a href="{% url 'blog:tag_search' tag %}" class="tag">{{ tag }}</a>
+                {% endfor %}
+              </div>
+              <div class="post-body">
+                <p class="lead">{{ post.overview }}</p>
+                <article class="markdown-body">
+                  {{ md_content | safe }}
+                </article>
+              </div>
+              <div class="posts-nav d-flex justify-content-between align-items-stretch flex-column flex-md-row">
+
+                {% if previous_post %}
+                <a href="{{ previous_post.get_absolute_url }}" class="prev-post text-left d-flex align-items-center">
+                  <div class="icon prev"><i class="fa fa-angle-left"></i></div>
+                  <div class="text"><strong class="text-primary">Previous Post </strong>
+                    <h6>{{ previous_post.title }}</h6>
+                  </div>
+                </a>
+                {% endif %}
+
+                {% if next_post %}
+                <a href="{{ next_post.get_absolute_url }}"
+                  class="next-post text-right d-flex align-items-center justify-content-end">
+                  <div class="text"><strong class="text-primary">Next Post </strong>
+                    <h6>{{ next_post.title }}</h6>
+                  </div>
+                  <div class="icon next"><i class="fa fa-angle-right"> </i></div>
+                </a>
+                {% endif %}
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </main>
+      {% include 'sidebar.html' with popular_tag=popular_tag most_popular=most_popular %}
+    </div>
+
+  </div>
+</section>
+
+{% endblock content %}

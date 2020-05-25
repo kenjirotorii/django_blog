@@ -1,0 +1,49 @@
+<aside class="col-lg-3">
+    <!-- Widget [Search Bar Widget]-->
+    <div class="widget search">
+        <header>
+            <h3 class="h6">Search the blog</h3>
+        </header>
+        <form action="{% url 'blog:search' %}" class="search-form">
+            <div class="form-group">
+                <input type="text" name="q" placeholder="What are you looking for?">
+                <button type="submit" class="submit"><i class="icon-search"></i></button>
+            </div>
+        </form>
+    </div>
+    <!-- Widget [Latest Posts Widget]        -->
+    <div class="widget latest-posts">
+        <header>
+            <h3 class="h6">Popular Posts</h3>
+        </header>
+        <div class="blog-posts">
+            {% for post in most_popular %}
+            <a href="{{ post.get_absolute_url }}">
+                <div class="item d-flex align-items-center">
+                    <div class="image"><img src="{{ post.thumbnail.url }}" alt="..." class="img-fluid"></div>
+                    <div class="title"><strong>{{ post.title }}</strong>
+                        <div class="d-flex align-items-center" style="margin-top: 10px;">
+                            <div class="date" style="font-size: 12px;">
+                                <i class="icon-clock"></i> {{ post.created_at.date }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+    <!-- Widget [Categories Widget]-->
+    <div class="widget categories">
+        <header>
+            <h3 class="h6">Popular Tags</h3>
+        </header>
+        {% for tag in popular_tag %}
+        <div class="item d-flex justify-content-between">
+            <a href="{% url 'blog:tag_search' tag.tags__name %}">{{ tag.tags__name }}</a>
+            <span>{{ tag.tags__name__count }}</span>
+        </div>
+        {% endfor %}
+    </div>
+
+</aside>

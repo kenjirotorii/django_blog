@@ -1,0 +1,23 @@
+[
+  {
+    "model": "blog.Category",
+    "pk": 1,
+    "fields": {
+      "name": "Technology"
+    }
+  },
+  {
+    "model": "blog.Category",
+    "pk": 2,
+    "fields": {
+      "name": "Book"
+    }
+  },
+  {
+    "model": "blog.Category",
+    "pk": 3,
+    "fields": {
+      "name": "Travel"
+    }
+  }
+]
