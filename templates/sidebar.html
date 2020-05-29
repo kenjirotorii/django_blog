@@ -7,7 +7,7 @@
         <form action="{% url 'blog:search' %}" class="search-form">
             <div class="form-group">
                 <input type="text" name="q" placeholder="What are you looking for?">
-                <button type="submit" class="submit"><i class="icon-search"></i></button>
+                <button type="submit" class="submit"><i class="fas fa-search"></i></button>
             </div>
         </form>
     </div>
@@ -24,7 +24,7 @@
                     <div class="title"><strong>{{ post.title }}</strong>
                         <div class="d-flex align-items-center" style="margin-top: 10px;">
                             <div class="date" style="font-size: 12px;">
-                                <i class="icon-clock"></i> {{ post.created_at.date }}
+                                <i class="far fa-clock"></i> {{ post.created_at.date }}
                             </div>
                         </div>
                     </div>

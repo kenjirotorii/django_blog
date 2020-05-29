@@ -49,7 +49,7 @@
                 </a>
                 <p class="text-muted">{{ post.overview }}</p>
                 <footer class="post-footer d-flex align-items-center">
-                  <div class="date"><i class="icon-clock"></i>{{ post.created_at.date }}</div>
+                  <div class="date"><i class="far fa-clock"></i>{{ post.created_at.date }}</div>
                 </footer>
                 <div class="post-tags">
                   {% for tag in post.tags.all %}
@@ -66,14 +66,14 @@
               <ul class="pagination pagination-template d-flex justify-content-center">
                 {% if queryset.has_previous %}
                 <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.previous_page_number }}"
-                    class="page-link"> <i class="fa fa-angle-left"></i></a></li>
+                    class="page-link"><i class="fas fa-angle-left"></i></a></li>
                 {% endif %}
                 <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.number }}"
                     class="page-link active">{{ queryset.number }}</a></li>
                 {% if queryset.has_next %}
                 <li class="page-item"><a href="?{{ page_request_var }}={{ queryset.next_page_number }}"
                     class="page-link">
-                    <i class="fa fa-angle-right"></i></a></li>
+                    <i class="fas fa-angle-right"></i></a></li>
                 {% endif %}
               </ul>
             </nav>
