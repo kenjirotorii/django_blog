@@ -5,7 +5,7 @@ import environ
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 env_file = os.path.join(BASE_DIR, ".env")
 
-env = environ.Env()
+env = environ.Env(DEBUG=(bool, False))
 env.read_env(env_file)
 
 SECRET_KEY = env("SECRET_KEY")
