@@ -45,6 +45,16 @@ li.nav-item {
   color: darkblue;
 }
 
+.navbar .langs a.nav-lang {
+  color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.navbar .langs a.nav-lang.active {
+  color: darkblue;
+}
+
 section.content {
   padding-top: 30px;
   padding-bottom: 30px;

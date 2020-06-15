@@ -18,7 +18,8 @@
       tex2jax: {
         inlineMath: [ ['$','$'], ['\\(','\\)'] ],
         displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
-        processEscapes: true
+        processEscapes: true,
+        processEnvironments: true
       },
       TeX: {
         equationNumbers: {
@@ -26,14 +27,18 @@
         },
         TagSide: "right",
       },
+      linebreaks: {
+        automatic: true,
+      },
       displayAlign: "center",
-      
-
     });
-    </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_SVG" async></script>
+</script>
 
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_SVG" async></script> -->
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML">
+  </script>
 <script>
 
   var delay;
